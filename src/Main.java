@@ -13,8 +13,12 @@ public class Main {
         Customer PCustomer = new Customer();
         PCustomer.name = "Premium ilham";
         PCustomer.age = 35;
-        PCustomer.customerId = 7;
+        PCustomer.customerId = 5;
         PCustomer.type = CustomerType.PREMIUM;
+
+        // toString
+        System.out.println(RCustomer);
+        System.out.println(PCustomer);
 
         //override
         RCustomer.introduce();
@@ -27,7 +31,15 @@ public class Main {
         double discount1 = RCustomer.calculateDiscount(200);
         double discount2 = PCustomer.calculateDiscount(350, 10);
 
-        System.out.println("the first discont is " + discount1);
+        System.out.println("the first discount is " + discount1);
         System.out.println("the second discount is " + discount2);
+
+        // equals
+        System.out.println(RCustomer.equals(PCustomer));
+
+        // hashCode
+        System.out.println(RCustomer.hashCode());
+        System.out.println(PCustomer.hashCode());
+
     }
 }
