@@ -35,6 +35,7 @@ public class Customer extends Person implements Payable{
     @Override
     public boolean equals(Object obj) {
 
+        System.out.println("equals called");
         if (this == obj) {
             return true;
         }
@@ -51,6 +52,8 @@ public class Customer extends Person implements Payable{
     // hashCode
     @Override
     public int hashCode() {
+
+        System.out.println("hashCode called for customerId: " + customerId);
         return Integer.hashCode(customerId);
     }
 }
