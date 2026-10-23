@@ -1,6 +1,7 @@
 public class Customer extends Person implements Payable{
     int customerId;
     CustomerType type;
+    private DiscountStrategy discountStrategy;
 
     //override
     @Override
@@ -10,7 +11,7 @@ public class Customer extends Person implements Payable{
 
     //Overloding
     public double calculateDiscount(double price) {
-        return price * 0.10;
+        return discountStrategy.calculateDiscount(price);
     }
     public double calculateDiscount(double price, double discount) {
         return price * discount / 100;
@@ -55,5 +56,9 @@ public class Customer extends Person implements Payable{
 
         System.out.println("hashCode called for customerId: " + customerId);
         return Integer.hashCode(customerId);
+    }
+
+    public void setDiscountStategy(DiscountStrategy discountStategy) {
+        this.discountStrategy = discountStategy;
     }
 }

@@ -29,11 +29,15 @@ public class Main {
         // interface method
         //RCustomer.pay();
 
-        // overload
-        double discount1 = RCustomer.calculateDiscount(200);
-        double discount2 = PCustomer.calculateDiscount(350, 10);
-        //System.out.println("the first discount is " + discount1);
-        //System.out.println("the second discount is " + discount2);
+        // Assign the appropriate discount strategy to each customer
+        RCustomer.setDiscountStategy(new RegularDiscountStrategy());
+        PCustomer.setDiscountStategy(new PremiumDiscountStrategy());
+
+        double regularDiscount = RCustomer.calculateDiscount(200);
+        double premiumDiscount = PCustomer.calculateDiscount(200);
+
+        System.out.println("Regular Customer discount is " + regularDiscount);
+        System.out.println("Premium Customer discount is " + premiumDiscount);
 
         // equals
         //System.out.println(RCustomer.equals(PCustomer));
